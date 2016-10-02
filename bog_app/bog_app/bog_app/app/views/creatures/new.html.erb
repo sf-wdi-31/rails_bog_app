@@ -1,0 +1,7 @@
+<h1>Add a new creature to the list!</h1>
+
+<%= form_for @creature do |f| %>
+  <%= f.text_field :name %>
+  <%= f.text_area :description %>
+  <%= f.submit "Create New Creature" %>
+<% end %>
