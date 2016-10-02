@@ -1,0 +1,1230 @@
+Started GET "/" for ::1 at 2016-10-02 12:15:05 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Parameters: {"internal"=>true}
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/railties-5.0.0.1/lib/rails/templates/rails/welcome/index.html.erb (4.4ms)
+Completed 200 OK in 20ms (Views: 10.1ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(4948178590284160560);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateCreatures (20161002191948)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "creatures" ("id" serial primary key, "name" character varying, "description" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20161002191948"]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", :environment], ["LIMIT", 1]]
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", 2016-10-02 19:20:23 UTC], ["updated_at", 2016-10-02 19:20:23 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(4948178590284160560)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT t2.oid::regclass::text AS to_table, a1.attname AS column, a2.attname AS primary_key, c.conname AS name, c.confupdtype AS on_update, c.confdeltype AS on_delete
+FROM pg_constraint c
+JOIN pg_class t1 ON c.conrelid = t1.oid
+JOIN pg_class t2 ON c.confrelid = t2.oid
+JOIN pg_attribute a1 ON a1.attnum = c.conkey[1] AND a1.attrelid = t1.oid
+JOIN pg_attribute a2 ON a2.attnum = c.confkey[1] AND a2.attrelid = t2.oid
+JOIN pg_namespace t3 ON c.connamespace = t3.oid
+WHERE c.contype = 'f'
+  AND t1.relname = 'creatures'
+  AND t3.nspname = ANY (current_schemas(false))
+ORDER BY c.conname
+[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Yoda"], ["description", "Little green man"], ["created_at", 2016-10-02 19:20:48 UTC], ["updated_at", 2016-10-02 19:20:48 UTC]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Luke Skywalker"], ["description", "Jedi"], ["created_at", 2016-10-02 19:21:53 UTC], ["updated_at", 2016-10-02 19:21:53 UTC]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Darth Vader"], ["description", "Luke's father"], ["created_at", 2016-10-02 19:21:53 UTC], ["updated_at", 2016-10-02 19:21:53 UTC]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCreature Load (0.6ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "creatures"[0m
+Started GET "/" for ::1 at 2016-10-02 12:25:56 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.8ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 741ms (Views: 731.6ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for ::1 at 2016-10-02 12:26:10 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.7ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2016-10-02 12:26:37 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.5ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 38ms (Views: 35.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for ::1 at 2016-10-02 12:26:45 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (1.0ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2016-10-02 12:32:55 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 39ms (Views: 33.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 12:32:58 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 21ms (Views: 19.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:33:02 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (55.8ms)
+Completed 500 Internal Server Error in 61ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `text_field=' for #<ActionView::Helpers::FormBuilder:0x007f989b318ba8>
+Did you mean?  text_field):
+    1: <%= form_for :creature, url: "/creatures", method: "post" do |f| %>
+    2:   <%= f.text_field = :name %>
+    3:   <%= f.text_area = :description %>
+    4:   <%= f.submit "Create New Creature" %>
+    5: <% end %>
+  
+app/views/creatures/new.html.erb:2:in `block in _app_views_creatures_new_html_erb___3991177750473313734_70146753589540'
+app/views/creatures/new.html.erb:1:in `_app_views_creatures_new_html_erb___3991177750473313734_70146753589540'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (6.9ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:33:02 -0700
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+Processing by CreaturesController#new as HTML
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (53.1ms)
+Completed 500 Internal Server Error in 76ms (ActiveRecord: 0.0ms)
+
+
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+ActionView::Template::Error (undefined method `text_field=' for #<ActionView::Helpers::FormBuilder:0x007f989c4e2a28>
+Did you mean?  text_field):
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (131.9ms)
+    1: <%= form_for :creature, url: "/creatures", method: "post" do |f| %>
+    2:   <%= f.text_field = :name %>
+    3:   <%= f.text_area = :description %>
+    4:   <%= f.submit "Create New Creature" %>
+    5: <% end %>
+  
+app/views/creatures/new.html.erb:2:in `block in _app_views_creatures_new_html_erb___3991177750473313734_70146753896380'
+app/views/creatures/new.html.erb:1:in `_app_views_creatures_new_html_erb___3991177750473313734_70146753896380'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.7ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:33:38 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (19.2ms)
+Completed 200 OK in 43ms (Views: 41.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:38:01 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.8ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @creature do |f| %>
+    2:   <%= f.text_field :name %>
+    3:   <%= f.text_area :description %>
+    4:   <%= f.submit "Create New Creature" %>
+  
+app/views/creatures/new.html.erb:1:in `_app_views_creatures_new_html_erb___3991177750473313734_70146707914800'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.4ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:38:46 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (2.6ms)
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @creature do |f| %>
+    2:   <%= f.text_field :name %>
+    3:   <%= f.text_area :description %>
+    4:   <%= f.submit "Create New Creature" %>
+  
+app/views/creatures/new.html.erb:1:in `_app_views_creatures_new_html_erb___3991177750473313734_70146699887380'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (53.1ms)
+Started GET "/" for ::1 at 2016-10-02 12:38:50 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 31ms (Views: 22.5ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 12:38:53 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.5ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/creatures/1" for ::1 at 2016-10-02 12:38:56 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/creatures/1"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [4 times] (2.1ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (69.9ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:38:59 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (3.0ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @creature do |f| %>
+    2:   <%= f.text_field :name %>
+    3:   <%= f.text_area :description %>
+    4:   <%= f.submit "Create New Creature" %>
+  
+app/views/creatures/new.html.erb:1:in `_app_views_creatures_new_html_erb___3991177750473313734_70146702690040'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.6ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.9ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:39:00 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (2.2ms)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @creature do |f| %>
+    2:   <%= f.text_field :name %>
+    3:   <%= f.text_area :description %>
+    4:   <%= f.submit "Create New Creature" %>
+  
+app/views/creatures/new.html.erb:1:in `_app_views_creatures_new_html_erb___3991177750473313734_70146731249360'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.4ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.5ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.6ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:39:13 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (101.3ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `creature' for #<#<Class:0x007f989b36b718>:0x007f989b444ab8>
+Did you mean?  creatures_url):
+    1: <%= form_for creature do |f| %>
+    2:   <%= f.text_field :name %>
+    3:   <%= f.text_area :description %>
+    4:   <%= f.submit "Create New Creature" %>
+  
+app/views/creatures/new.html.erb:1:in `_app_views_creatures_new_html_erb___3991177750473313734_70146708351520'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (54.0ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:39:35 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @creature do |f| %>
+    2:   <%= f.text_field :name %>
+    3:   <%= f.text_area :description %>
+    4:   <%= f.submit "Create New Creature" %>
+  
+app/views/creatures/new.html.erb:1:in `_app_views_creatures_new_html_erb___3991177750473313734_70146737879600'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.1ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (56.0ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:40:35 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (2.4ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: <%= form_for @creature do |f| %>
+    2:   <%= f.text_field :name %>
+    3:   <%= f.text_area :description %>
+    4:   <%= f.submit "Create New Creature" %>
+  
+app/views/creatures/new.html.erb:1:in `_app_views_creatures_new_html_erb___3991177750473313734_70146753629100'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (57.4ms)
+Started GET "/" for ::1 at 2016-10-02 12:44:14 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.4ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 34ms (Views: 28.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 12:44:18 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.4ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:44:22 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 12:45:09 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OjHPQ2j23TnY8aC4yaaOaMPmqVbXhUFQJCiSda5Jb8jO2JvLi5ZbeTfVYt7gsYBT39uG0rqQ6ynHiHZSVdHjWg==", "creature"=>{"name"=>"Rodents of Unusual Size", "description"=>"Large, nasty rats"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Rodents of Unusual Size"], ["description", "Large, nasty rats"], ["created_at", 2016-10-02 19:45:09 UTC], ["updated_at", 2016-10-02 19:45:09 UTC]]
+  [1m[35m (12.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures
+Completed 302 Found in 34ms (ActiveRecord: 13.5ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 12:45:09 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 20ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 12:53:10 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 29ms (Views: 23.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for ::1 at 2016-10-02 12:53:14 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 21ms (Views: 18.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 12:53:19 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.4ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 27ms (Views: 24.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/creatures/1" for ::1 at 2016-10-02 12:53:24 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"1"}
+Completed 500 Internal Server Error in 64ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `creature_id' for #<CreaturesController:0x007f989acb6738>
+Did you mean?  create):
+  
+app/controllers/creatures_controller.rb:17:in `show'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (78.0ms)
+Started GET "/creatures/1" for ::1 at 2016-10-02 12:54:27 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 34ms (Views: 18.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures/4" for ::1 at 2016-10-02 12:54:33 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:54:37 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 26ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 12:54:50 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yQA9Xa+1h32ISuYAxrliK6mGezATV4vzUrc3d0XFrvM96WnVTNUBPWduJGbvrmwQtbtUtH5CIYqxF9NQvl0iYQ==", "creature"=>{"name"=>"Creepy Crawlers", "description"=>"Gross bog bugs"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Creepy Crawlers"], ["description", "Gross bog bugs"], ["created_at", 2016-10-02 19:54:50 UTC], ["updated_at", 2016-10-02 19:54:50 UTC]]
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 6.6ms)
+
+
+  
+NoMethodError (undefined method `creature_path' for #<CreaturesController:0x007f989b4a4620>
+Did you mean?  creatures_path):
+  
+app/controllers/creatures_controller.rb:12:in `create'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (81.2ms)
+Started POST "/creatures" for ::1 at 2016-10-02 12:55:13 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yQA9Xa+1h32ISuYAxrliK6mGezATV4vzUrc3d0XFrvM96WnVTNUBPWduJGbvrmwQtbtUtH5CIYqxF9NQvl0iYQ==", "creature"=>{"name"=>"Creepy Crawlers", "description"=>"Gross bog bugs"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Creepy Crawlers"], ["description", "Gross bog bugs"], ["created_at", 2016-10-02 19:55:13 UTC], ["updated_at", 2016-10-02 19:55:13 UTC]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 46ms (ActiveRecord: 1.6ms)
+
+
+  
+NoMethodError (undefined method `creature_path' for #<CreaturesController:0x007f989d968bf0>
+Did you mean?  creatures_path):
+  
+app/controllers/creatures_controller.rb:12:in `create'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.3ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.9ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:55:16 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 48ms (Views: 45.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 12:55:28 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uxPrtb406BUte0vUD0upqhNYQdt7yLtV3lqqUkh1acdP+r89XVRuVcJfibImXKeRD2VuXxbdESw9+k51s+3lVQ==", "creature"=>{"name"=>"Testing", "description"=>"Testing"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Testing"], ["description", "Testing"], ["created_at", 2016-10-02 19:55:28 UTC], ["updated_at", 2016-10-02 19:55:28 UTC]]
+  [1m[35m (10.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 55ms (ActiveRecord: 12.1ms)
+
+
+  
+NoMethodError (undefined method `creature_path' for #<CreaturesController:0x007f989df208e0>
+Did you mean?  creatures_path):
+  
+app/controllers/creatures_controller.rb:12:in `create'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.8ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:55:43 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 31ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 12:55:52 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Aoda6pFbibbZ6mK4TI2w6U90SkCWHtyZnDjsbudhwSb2bg5icjsP9jbOoN5lmr7SU0llxPsLduB/mAhJHPlNtA==", "creature"=>{"name"=>"Testing Again", "description"=>"Testing Again"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Testing Again"], ["description", "Testing Again"], ["created_at", 2016-10-02 19:55:52 UTC], ["updated_at", 2016-10-02 19:55:52 UTC]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures.8
+Completed 302 Found in 12ms (ActiveRecord: 6.8ms)
+
+
+Started GET "/creatures.8" for ::1 at 2016-10-02 12:55:52 -0700
+Processing by CreaturesController#index as 
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 51ms (Views: 32.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:56:12 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 31ms (Views: 23.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 12:56:21 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QQVh/6PAfbiBDK2Lo5nNOvopYOtu0e0BvvJtqm5915m17DV3QKD7+G4ob+2KjsMB5hRPbwPER3hdUomNleVbCw==", "creature"=>{"name"=>"Testing Creature", "description"=>"Testing Creature"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Testing Creature"], ["description", "Testing Creature"], ["created_at", 2016-10-02 19:56:21 UTC], ["updated_at", 2016-10-02 19:56:21 UTC]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 6.1ms)
+
+
+  
+NoMethodError (undefined method `creature_path' for #<CreaturesController:0x007f989ac5fde8>
+Did you mean?  creatures_path):
+  
+app/controllers/creatures_controller.rb:12:in `create'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (84.9ms)
+Started GET "/" for ::1 at 2016-10-02 12:58:03 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 12:58:07 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/5" for ::1 at 2016-10-02 12:58:10 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCreature Load (0.6ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 30ms (Views: 20.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:58:14 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 26.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 12:58:22 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/lA1J8kifgCrP8z0wX2W+I1kDbS2fZr/hS4NZOzo+qMKuWGvKkL4QEQbDpLoapjDkVkiMNtoMIZmjulDF3B2MQ==", "creature"=>{"name"=>"More Creatures", "description"=>"More Creatures"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "More Creatures"], ["description", "More Creatures"], ["created_at", 2016-10-02 19:58:22 UTC], ["updated_at", 2016-10-02 19:58:22 UTC]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 7.2ms)
+
+
+  
+NoMethodError (undefined method `creature_path' for #<CreaturesController:0x007f98a0b48350>
+Did you mean?  creatures_path):
+  
+app/controllers/creatures_controller.rb:12:in `create'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (80.1ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:58:40 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 36ms (Views: 23.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:58:40 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 12:58:56 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RPknRKvQOqdcyp5QZSAeQQJPEi/pc+rbkV1aZxRtWoywEHPMSLC857PuXDZMNxB6HnI9q4RmQKJy/b5A7/XWHg==", "creature"=>{"name"=>"Even More Creatures", "description"=>"Even More Creatures"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Even More Creatures"], ["description", "Even More Creatures"], ["created_at", 2016-10-02 19:58:56 UTC], ["updated_at", 2016-10-02 19:58:56 UTC]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures.11
+Completed 302 Found in 10ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/creatures.11" for ::1 at 2016-10-02 12:58:56 -0700
+Processing by CreaturesController#index as 
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 46ms (Views: 31.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 12:59:43 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 33ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 12:59:56 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jphgBXYFBv11Y2ilhvoLI7+bWzaS6cQZQevXKgcqQsh6cTSNlWWAvZpHqsOv7QUYo6Z0sv/8bmCiSzMN/LLOWg==", "creature"=>{"name"=>"Here we go again", "description"=>"I can't wait to delete these"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Here we go again"], ["description", "I can't wait to delete these"], ["created_at", 2016-10-02 19:59:56 UTC], ["updated_at", 2016-10-02 19:59:56 UTC]]
+  [1m[35m (5.8ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 7.0ms)
+
+
+  
+NoMethodError (undefined method `creature_path' for #<CreaturesController:0x007f989b2c9698>
+Did you mean?  creatures_path):
+  
+app/controllers/creatures_controller.rb:12:in `create'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.1ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (87.6ms)
+Started GET "/" for ::1 at 2016-10-02 13:01:01 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 32ms (Views: 27.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures/1" for ::1 at 2016-10-02 13:01:09 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 30ms (Views: 24.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/creatures/10" for ::1 at 2016-10-02 13:01:09 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 26ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 13:01:12 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 25ms (Views: 21.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 13:01:22 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xHtus2sJp26dm0HFPtgbaAgwFXx6D516wTIiwvGf/mgwkjo7iGkhLnK/g6MXzxVTFA06+BcaNwMiksblCgdy+g==", "creature"=>{"name"=>"It's going to be awesome", "description"=>"When this works"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "It's going to be awesome"], ["description", "When this works"], ["created_at", 2016-10-02 20:01:22 UTC], ["updated_at", 2016-10-02 20:01:22 UTC]]
+  [1m[35m (6.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 6.7ms)
+
+
+  
+ActionController::UrlGenerationError (No route matches {:action=>"show", :controller=>"creatures", :id=>nil} missing required keys: [:id]):
+  
+app/controllers/creatures_controller.rb:12:in `create'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.5ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (57.9ms)
+Started GET "/creatures/new" for ::1 at 2016-10-02 13:01:35 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 31ms (Views: 20.7ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/creatures" for ::1 at 2016-10-02 13:01:43 -0700
+Processing by CreaturesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LOxKIeG3YlM5jMz945nV5qPzCoRGo6T9FV3p/Ka8MMvYBR6pAtfkE9aoDpvKjtvdv84lACu2DoT2/Q3bXSS8WQ==", "creature"=>{"name"=>"If this ever works", "description"=>"I deserve wine"}, "commit"=>"Create New Creature"}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "creatures" ("name", "description", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "If this ever works"], ["description", "I deserve wine"], ["created_at", 2016-10-02 20:01:43 UTC], ["updated_at", 2016-10-02 20:01:43 UTC]]
+  [1m[35m (6.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures/14
+Completed 302 Found in 10ms (ActiveRecord: 6.7ms)
+
+
+Started GET "/creatures/14" for ::1 at 2016-10-02 13:01:43 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-10-02 13:07:06 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 37ms (Views: 30.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/11/edit" for ::1 at 2016-10-02 13:07:12 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/11/edit"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered collection of /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (2.2ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.1ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (73.4ms)
+Started GET "/8/edit" for ::1 at 2016-10-02 13:07:30 -0700
+  
+ActionController::RoutingError (No route matches [GET] "/8/edit"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.1ms)
+  Rendered collection of /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (1.8ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.0ms)
+Started GET "/creatures/8/edit" for ::1 at 2016-10-02 13:07:38 -0700
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCreature Load (0.5ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering creatures/edit.html.erb within layouts/application
+  Rendered creatures/edit.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 24ms (Views: 20.1ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/creatures/8" for ::1 at 2016-10-02 13:07:49 -0700
+  
+ActionController::RoutingError (No route matches [PATCH] "/creatures/8"):
+  
+actionpack (5.0.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.3.1) lib/web_console/middleware.rb:131:in `call_app'
+web-console (3.3.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.3.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.0.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `block in tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.0.1) lib/active_support/tagged_logging.rb:70:in `tagged'
+railties (5.0.0.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.0.1) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.0.1) lib/rails/engine.rb:522:in `call'
+puma (3.6.0) lib/puma/configuration.rb:225:in `call'
+puma (3.6.0) lib/puma/server.rb:578:in `handle_request'
+puma (3.6.0) lib/puma/server.rb:415:in `process_client'
+puma (3.6.0) lib/puma/server.rb:275:in `block in run'
+puma (3.6.0) lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered collection of /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [6 times] (2.1ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (79.1ms)
+Started GET "/" for ::1 at 2016-10-02 13:11:58 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 34ms (Views: 27.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 13:12:04 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures/new" for ::1 at 2016-10-02 13:12:07 -0700
+Processing by CreaturesController#new as HTML
+  Rendering creatures/new.html.erb within layouts/application
+  Rendered creatures/new.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 30ms (Views: 27.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/creatures/9/edit" for ::1 at 2016-10-02 13:12:12 -0700
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering creatures/edit.html.erb within layouts/application
+  Rendered creatures/edit.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/creatures/9" for ::1 at 2016-10-02 13:12:22 -0700
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hPwLxqzZ+GQB/vG9W73f96ABrSJ+uSjoJGxLr/dFIXpwFV9OT7l+JO7aM9tyqtHMvDyCphOsgpHHzK+IDN2t6A==", "creature"=>{"name"=>"Testing Yo Creature", "description"=>"yo yo yo"}, "commit"=>"Save Creature", "id"=>"9"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "creatures" SET "name" = $1, "description" = $2, "updated_at" = $3 WHERE "creatures"."id" = $4[0m  [["name", "Testing Yo Creature"], ["description", "yo yo yo"], ["updated_at", 2016-10-02 20:12:22 UTC], ["id", 9]]
+  [1m[35m (4.6ms)[0m  [1m[35mCOMMIT[0m
+Completed 500 Internal Server Error in 53ms (ActiveRecord: 5.8ms)
+
+
+  
+NoMethodError (undefined method `creature_parth' for #<CreaturesController:0x007f989ea49b90>
+Did you mean?  creature_path
+               creatures_path
+               creature_url):
+  
+app/controllers/creatures_controller.rb:28:in `update'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (120.1ms)
+Started PATCH "/creatures/9" for ::1 at 2016-10-02 13:12:32 -0700
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hPwLxqzZ+GQB/vG9W73f96ABrSJ+uSjoJGxLr/dFIXpwFV9OT7l+JO7aM9tyqtHMvDyCphOsgpHHzK+IDN2t6A==", "creature"=>{"name"=>"Testing Yo Creature", "description"=>"yo yo yo"}, "commit"=>"Save Creature", "id"=>"9"}
+  [1m[36mCreature Load (0.4ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures/9
+Completed 302 Found in 13ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/creatures/9" for ::1 at 2016-10-02 13:12:32 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 18ms (Views: 16.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/9/edit" for ::1 at 2016-10-02 13:12:35 -0700
+Processing by CreaturesController#edit as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering creatures/edit.html.erb within layouts/application
+  Rendered creatures/edit.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 20ms (Views: 16.8ms | ActiveRecord: 0.3ms)
+
+
+Started PATCH "/creatures/9" for ::1 at 2016-10-02 13:12:41 -0700
+Processing by CreaturesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rpe3QUlLYOrT5PDQ8BQjkFmvwJ0OeMp/+sb91ieZGfFafuPJqivmqjzAMrbZAy2rRZLvGWNtYAYZZhnx3AGVYw==", "creature"=>{"name"=>"Testing Yo Creature", "description"=>"here we go again"}, "commit"=>"Save Creature", "id"=>"9"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "creatures" SET "description" = $1, "updated_at" = $2 WHERE "creatures"."id" = $3[0m  [["description", "here we go again"], ["updated_at", 2016-10-02 20:12:41 UTC], ["id", 9]]
+  [1m[35m (5.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures/9
+Completed 302 Found in 10ms (ActiveRecord: 6.4ms)
+
+
+Started GET "/creatures/9" for ::1 at 2016-10-02 13:12:41 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 19ms (Views: 16.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for ::1 at 2016-10-02 13:15:57 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures/8" for ::1 at 2016-10-02 13:16:05 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/creatures/8" for ::1 at 2016-10-02 13:16:06 -0700
+Processing by CreaturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PE7Ut5AO3CXxWJiAGBpiP8VomnljydRhM9GF3aR9X6HIp4A/c25aZR58WuYxDWwE2VW1/Q7cfhjQcWH6X+XTMw==", "id"=>"8"}
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.3ms)
+
+
+  
+NoMethodError (undefined method `destory' for #<Creature:0x007f989ece6880>
+Did you mean?  destroy):
+  
+app/controllers/creatures_controller.rb:33:in `destroy'
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.6ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/mishaleclair/.rvm/gems/ruby-2.3.0/gems/actionpack-5.0.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (52.7ms)
+Started DELETE "/creatures/8" for ::1 at 2016-10-02 13:16:29 -0700
+Processing by CreaturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"PE7Ut5AO3CXxWJiAGBpiP8VomnljydRhM9GF3aR9X6HIp4A/c25aZR58WuYxDWwE2VW1/Q7cfhjQcWH6X+XTMw==", "id"=>"8"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "creatures" WHERE "creatures"."id" = $1[0m  [["id", 8]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures
+Completed 302 Found in 9ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 13:16:30 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 22ms (Views: 19.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures/5" for ::1 at 2016-10-02 13:16:36 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 23ms (Views: 21.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/creatures/5" for ::1 at 2016-10-02 13:16:38 -0700
+Processing by CreaturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xMJvd++98d71zNtshOP3Js73Bxd7znjZqftOC1u1sK4wKzv/DN13nhroGQqt9Pkd0sookxbb0qBKW6osoC08PA==", "id"=>"5"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "creatures" WHERE "creatures"."id" = $1[0m  [["id", 5]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures
+Completed 302 Found in 4ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 13:16:38 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 24ms (Views: 21.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures/7" for ::1 at 2016-10-02 13:16:41 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/6" for ::1 at 2016-10-02 13:16:41 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/creatures/6" for ::1 at 2016-10-02 13:16:43 -0700
+Processing by CreaturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"oCj0zJGY4uzPugNxYlErzwKqKKaorNChHD1KHGuxvbNUwaBEcvhkrCCewRdLRiX0HpcHIsW5etj/na47kCkxIQ==", "id"=>"6"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "creatures" WHERE "creatures"."id" = $1[0m  [["id", 6]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 13:16:43 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/creatures/7" for ::1 at 2016-10-02 13:16:47 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mCreature Load (0.4ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 21ms (Views: 18.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/creatures/7" for ::1 at 2016-10-02 13:16:49 -0700
+Processing by CreaturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"F+1LxZUHH0ElQkHMDdb4ub2tMPz0HOmgtGWDfaEiEAzjBB9NdmeZAcpmg6okwfaCoZAfeJkJQ9lXxWdaWrqcng==", "id"=>"7"}
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[31mDELETE FROM "creatures" WHERE "creatures"."id" = $1[0m  [["id", 7]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures
+Completed 302 Found in 4ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 13:16:49 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.2ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 25ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/creatures/9" for ::1 at 2016-10-02 13:16:51 -0700
+Processing by CreaturesController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mCreature Load (0.4ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering creatures/show.html.erb within layouts/application
+  Rendered creatures/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 21ms (Views: 17.2ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/creatures/9" for ::1 at 2016-10-02 13:16:53 -0700
+Processing by CreaturesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3HQckjicge80XFa/WuhVE7nZ3GABd+j90JZHzHg60MAonUga2/wHr9t4lNlz/1sopeTz5GxiQoQzNqPrg6JcUg==", "id"=>"9"}
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT  "creatures".* FROM "creatures" WHERE "creatures"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "creatures" WHERE "creatures"."id" = $1[0m  [["id", 9]]
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/creatures
+Completed 302 Found in 4ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/creatures" for ::1 at 2016-10-02 13:16:53 -0700
+Processing by CreaturesController#index as HTML
+  Rendering creatures/index.html.erb within layouts/application
+  [1m[36mCreature Load (0.3ms)[0m  [1m[34mSELECT "creatures".* FROM "creatures"[0m
+  Rendered creatures/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 0.3ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (5030.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bog_app_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", :environment]]
+  [1m[35m (119.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bog_app_development"[0m
+  [1m[35m (118.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "bog_app_test"[0m
